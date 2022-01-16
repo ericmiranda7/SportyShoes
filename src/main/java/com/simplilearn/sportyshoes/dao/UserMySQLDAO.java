@@ -44,7 +44,9 @@ public class UserMySQLDAO extends AbstractDAO<User> {
             user.setUserId(rs.getInt(1));
             user.setUsername(rs.getString(2));
             user.setPassword(rs.getString(3));
-            user.setAdmin(rs.getBoolean(4));
+            user.setEmail(rs.getString(4));
+            user.setPhoneNumber(rs.getString(5));
+            user.setAdmin(rs.getBoolean(6));
             return user;
         };
     }

@@ -16,6 +16,8 @@ public class AuthService {
 
     public void authenticateUser(String username, String pass) throws LoginException {
         User user = userService.getUserByUsername(username);
+        System.out.println("bool====" + user.isAdmin());
+        if (!user.isAdmin()) throw new LoginException();
         if (!(user.getUsername().equals(username) && user.getPassword().equals(pass))) throw new LoginException();
     }
 }
